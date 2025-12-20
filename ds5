@@ -1,0 +1,73 @@
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+        int[] n = {1, 2, 3, 2};
+        int nsumm = 0;
+        for (int i = 0; i < n.length; i++) {
+            nsumm += n[i];
+        }
+        System.out.println(nsumm / n.length);
+
+        System.out.println("-----------------------------------");
+
+        int[] n2 = {-1, -5, 5};
+        for (int i = 0; i< n2.length; i++) {
+            if (n2[i] < 0){
+                n2[i] = n2[i] * -1;
+            }
+            System.out.println(n2[i]);
+        }
+
+        int[][] n3 = {
+                        {1, 2, 3},
+                        {4, 5, 6},
+                        {7 ,8 ,9}
+        };
+
+        System.out.println("-----------------------------------");
+
+        int nsumm2 = 0;
+        for (int i = 0; i < n3.length; i++) {
+            for (int i2 = 0; i2 < n3[i].length; i2++) {
+                nsumm2 += n3[i][i2];
+            }
+        }
+        System.out.println(nsumm2);
+
+        System.out.println("-----------------------------------");
+
+        int[] n4 = {1, 2, 3, -4, 30, 45, 0, 34, -2, -5, 3};
+        int max_number = n4[0];
+
+        for (int i = 0; i < n4.length; i++) {
+            if( n4[i] > max_number ){
+                max_number = n4[i];
+            }
+        }
+        int index = -1;
+        for (int i = 0; i < n4.length; i++) {
+            if (n4[i] == max_number){
+                index = i;
+            }
+        }
+        System.out.println(index);
+
+        System.out.println("-----------------------------------");
+
+        int[] n5 = {1, 2, 3, -4, 30, 45, 0, 34, -2, -5, 3};
+
+        boolean tr = false;
+
+        for (int i = 0; i < n5.length; i++) {
+            for (int ii = 0; ii < n5.length;ii++){
+                if (n5[i] == n5[ii]){
+                    tr = true;
+                    break;
+                }
+            }
+        }
+
+        System.out.println(tr);
+    }
+}
