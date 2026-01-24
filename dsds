@@ -1,0 +1,45 @@
+class test{
+    public double product(double x, double y){
+        return x*y;
+    }
+    public double summ(int x, int y){
+        if (x + 1 == y){
+            return x + y;
+        } else {
+            return x + summ(x + 1, y);
+        }
+
+    }
+    public void produkt(String name){
+        System.out.println("Вы выбрали продукт: " + name);
+    }
+    public void produkt(String name, int count, double cost){
+        System.out.println("Вы выбрали продукт: " + name + ", ценой в: " + cost + ", количеством в: " + count + ", итоговая сумма составит: " + cost * count);
+    }
+
+    public int summ2(int x){
+        if (x / 10 == 0){
+            return x;
+        } else {
+            return x % 10 + summ2(x / 10);
+        }
+    }
+    public int S(int a){
+        if (a >= 1 && a <=5){
+            return a*a;
+        } else {
+            System.out.println("Error");
+            return 0;
+        }
+
+    }
+}
+void main() {
+    test test = new test();
+    System.out.println(test.product(5,7));
+    System.out.println(test.summ(-5,7));
+    test.produkt("Banana");
+    test.produkt("Apple", 5, 20);
+    System.out.println(test.summ2(5235));
+    System.out.println(test.S(5));
+}
