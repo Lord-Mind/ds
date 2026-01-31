@@ -1,0 +1,40 @@
+class Animal{
+    String name;
+    String type;
+    public void GetAnimal(){
+        System.out.println("Это "+type+" по имени "+name);
+    }
+}
+class Library{
+    private String[] Books = {"Book1", "book2", "book3",null,null};
+    void GetBooks(){
+        for (String i:Books){
+            System.out.println(i);
+        }
+    }
+    void AddBooks(String NewBook, int x){
+        Books[x] = NewBook;
+    }
+    void FindBook(String name){
+        for (String i:Books){
+            if (i == name){
+                System.out.println(name + " найдена");
+                return;
+            }
+        }
+        System.out.println(name + " не найдена");
+        return;
+    }
+}
+void main() {
+    Animal fish = new Animal();
+    fish.type = "fish";
+    fish.name = "lava";
+    fish.GetAnimal();
+    Library library = new Library();
+    library.GetBooks();
+    library.FindBook("book4");
+    library.AddBooks("book4",3);
+    library.GetBooks();
+    library.FindBook("book4");
+}
