@@ -1,0 +1,39 @@
+class Car{
+    String brand;
+    String model;
+    int year;
+    void startEngine(){
+        System.out.println("Двигатель запущен");
+    }
+    void stopEhgine(){
+        System.out.println("Двигатель остановлен");
+    }
+}
+class ElectricCar extends Car{
+    int BataryProcent;
+    void bataryProcent(){
+        if (BataryProcent < 20){
+            System.out.println("Батарея разряжена, требуется зарядка");
+        }
+    }
+    @Override
+    void startEngine(){
+        System.out.println("Электродвигатель запущен");
+    }
+    @Override
+    void stopEhgine(){
+        System.out.println("Электродвигатель остановлен");
+    }
+}
+
+void main() {
+    ElectricCar electricCar = new ElectricCar();
+
+    electricCar.brand = "Tesla";
+    electricCar.model = "HyperTrack";
+    electricCar.year = 2022;
+    electricCar.BataryProcent = 19;
+    electricCar.startEngine();
+    electricCar.bataryProcent();
+    electricCar.stopEhgine();
+}
