@@ -1,0 +1,25 @@
+interface Transport{
+    void move();
+}
+class Car implements Transport{
+    public void move(){
+        System.out.println("машина едет со скоостью 40км/ч");
+    }
+}
+class Bike implements Transport{
+    public void move(){
+        System.out.println("мотоцикл едет со скоостью 50км/ч");
+    }
+}
+class TransportManager{
+    public void startTransport(Transport transport){
+        transport.move();
+    }
+}
+void main() {
+    Car car = new Car();
+    Bike bike = new Bike();
+    TransportManager transportManager = new TransportManager();
+    transportManager.startTransport(car);
+    transportManager.startTransport(bike);
+}
