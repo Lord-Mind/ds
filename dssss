@@ -1,0 +1,37 @@
+class ArrayListManeger{
+    private List<String> list = new ArrayList<>();
+    public void AddList(String name){
+        list.add(name);
+    }
+    public void RemoveList(String name){
+        list.remove(name);
+    }
+    public boolean FindList(String name){
+        return list.contains(name);
+    }
+    public List<String> Sort(){
+        List<String> NewList = list.stream().distinct().sorted().toList();
+        return NewList;
+    }
+
+    public List<String> getList() {
+        return list;
+    }
+
+    public void setList(List<String> list) {
+        this.list = list;
+    }
+}
+void main() {
+    ArrayListManeger arrayListManeger = new ArrayListManeger();
+    arrayListManeger.AddList("banana");
+    arrayListManeger.AddList("apple");
+    arrayListManeger.AddList("apple");
+    arrayListManeger.AddList("orange");
+    arrayListManeger.AddList("orange");
+    System.out.println(arrayListManeger.getList());
+    arrayListManeger.RemoveList("apple");
+    System.out.println(arrayListManeger.getList());
+    arrayListManeger.setList(arrayListManeger.Sort());
+    System.out.println(arrayListManeger.Sort());
+}
