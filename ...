@@ -1,0 +1,71 @@
+class  Library{
+    Map<Integer,String> books = new HashMap<>();
+    void addBook(int Id,String name){
+        books.put(Id, name);
+    }
+    void getBooks(){
+        System.out.println(books);
+    }
+    void findBook(int Id){
+        if (books.get(Id) != null) {
+            System.out.println(books.get(Id));
+        } else {
+            System.out.println("Error");
+        }
+    }
+}
+class NumberManager{
+    Map<String,Integer> numbers = new LinkedHashMap<>();
+
+    void addNumber(String name, int number){
+        numbers.put(name,number);
+    }
+    void getNumbers(){
+        System.out.println(numbers);
+    }
+    void findNumber(String name){
+        if (numbers.get(name) != null){
+            System.out.println(numbers.get(name));
+        } else {
+            System.out.println("Error");
+        }
+    }
+}
+class StudentManager{
+    Map<String,Integer> students = new TreeMap<>();
+    void addStudent(String name, int n){
+        students.put(name,n);
+    }
+    void getStudents(){
+        System.out.println(students);
+    }
+}
+void main() {
+    Library library = new Library();
+    library.addBook(1,"book1");
+    library.addBook(5,"book5");
+    library.addBook(6,"book6");
+    library.getBooks();
+    library.findBook(1);
+    library.findBook(3);
+
+    NumberManager numberManager = new NumberManager();
+    numberManager.addNumber("David", 54336345);
+    numberManager.addNumber("Sara", 12397845);
+    numberManager.addNumber("Bob", 23464545);
+
+    numberManager.getNumbers();
+
+    numberManager.findNumber("Bob");
+    numberManager.findNumber("Vika");
+
+
+    StudentManager studentManager = new StudentManager();
+
+    studentManager.addStudent("David",5);
+    studentManager.addStudent("Bob",3);
+    studentManager.addStudent("Vika",4);
+    studentManager.addStudent("Sara",4);
+
+    studentManager.getStudents();
+}
