@@ -1,0 +1,57 @@
+class NameServise{
+    private Set<String> names = new HashSet<>();
+
+    public void add(String name){
+        names.add(name);
+    }
+
+    public void remove(String name){
+        names.remove(name);
+    }
+
+    public boolean find(String name){
+        return names.contains(name);
+    }
+
+    public void getAll(){
+        System.out.println(names);
+    }
+}
+
+class TextManager{
+    Set<String> wordsSet = new TreeSet<>();
+    public void SetWords(String text){
+        String[] words = text.split(" ");
+        for (String word : words){
+            wordsSet.add(word);
+        }
+
+    }
+    public void PrintAll(){
+        System.out.println(wordsSet);
+    }
+    public void clear(){
+        wordsSet = new TreeSet<>();
+    }
+}
+void main() {
+    NameServise nameServise = new NameServise();
+    nameServise.add("Alice");
+    nameServise.add("Bob");
+    nameServise.add("David");
+    nameServise.add("Alice");
+    nameServise.getAll();
+    System.out.println(nameServise.find("Bob"));
+
+    TextManager textManager = new TextManager();
+    textManager.SetWords("программа для деления текста на слова не запоминает повторяющиеся слова");
+    textManager.PrintAll();
+
+    Set<String> setPeople = new TreeSet<>();
+    setPeople.add("Alice");
+    setPeople.add("Bob");
+    setPeople.add("Bob");
+    setPeople.add("David");
+    setPeople.add("Mark");
+    System.out.println(setPeople);
+}
